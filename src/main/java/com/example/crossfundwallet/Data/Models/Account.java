@@ -1,5 +1,6 @@
 package com.example.crossfundwallet.Data.Models;
 
+
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
