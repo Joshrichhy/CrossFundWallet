@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>MetalCardProject</artifactId>
+    <artifactId>CrossFundWallet</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MetalCardProject</name>
-    <description>MetalCardProject</description>
+    <name>CrossFundWallet</name>
+    <description>CrossFundWallet</description>
     <properties>
         <java.version>17</java.version>
     </properties>

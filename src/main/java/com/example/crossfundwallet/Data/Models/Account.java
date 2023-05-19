@@ -13,4 +13,5 @@ public class Account {
     private String accountNumber;
     private String accountStatus;
     private String transactionHistory;
+
 }

@@ -1,26 +1,21 @@
-package com.example.crossfundwallet.Data.Models;
+package com.example.crossfundwallet.dto.response;
 
+import com.example.crossfundwallet.Data.Models.Card;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 @Data
-public class User {
-    @Id
-    private String id;
+public class RegisterUserResponse {
     private String firstName;
     private String lastName;
     private String emailAddress;
     private String phoneNumber;
-    private LocalDate DOB;
+    private String DOB;
     private LocalDate DateOfRegistration;
     private String accountNumber;
-    private int age;
-    private String password;
-    private List<Card> cards = new ArrayList<>();
-
-
 }
