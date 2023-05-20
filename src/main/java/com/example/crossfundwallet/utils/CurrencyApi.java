@@ -1,5 +1,6 @@
 package com.example.crossfundwallet.utils;
 
+import com.example.crossfundwallet.Data.Models.CurrencyType;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,10 +14,10 @@ import java.util.Scanner;
 
 
 public class CurrencyApi {
-    static JSONObject data = null;
+    static JSONObject data;
 
-    public CurrencyApi(){
-        String endpoint = "https://api.exchangerate-api.com/v4/latest/NGN";
+    public CurrencyApi(CurrencyType currencyType){
+        String endpoint = "https://api.exchangerate-api.com/v4/latest/"+currencyType;
 
         try {
             URL url = new URL(endpoint);
@@ -50,9 +51,7 @@ public class CurrencyApi {
         return  data.getJSONObject("rates").getBigDecimal("CAD");
     }
 
-    public static void main(String[] args) {
-        System.out.println(CurrencyApi.poundsRate());
-    }
+
 
 
 

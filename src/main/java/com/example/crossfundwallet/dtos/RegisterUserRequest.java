@@ -13,6 +13,7 @@ public class RegisterUserRequest {
     private String password;
     private String phoneNumber;
     private String accountCurrencyType;
+    private String accountPin;
 
 
 }
