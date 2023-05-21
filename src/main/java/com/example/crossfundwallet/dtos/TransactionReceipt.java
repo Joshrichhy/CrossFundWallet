@@ -11,8 +11,9 @@ import java.time.LocalDate;
 @Data
 public class TransactionReceipt {
     private String transactionId;
-    private TransactionType transactionType;
+    private String transactionType;
     private LocalDate transactionDate;
+    private String accountNumber;
     private BigDecimal transactionAmount;
     private String status;
 }

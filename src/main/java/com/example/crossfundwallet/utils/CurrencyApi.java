@@ -1,7 +1,6 @@
 package com.example.crossfundwallet.utils;
 
 import com.example.crossfundwallet.Data.Models.CurrencyType;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -14,7 +13,7 @@ import java.util.Scanner;
 
 
 public class CurrencyApi {
-    static JSONObject data;
+     JSONObject data;
 
     public CurrencyApi(CurrencyType currencyType){
         String endpoint = "https://api.exchangerate-api.com/v4/latest/"+currencyType;
@@ -32,22 +31,22 @@ public class CurrencyApi {
             ex.printStackTrace();
         }}
 
-    public static BigDecimal nairaRate(){
+    public BigDecimal nairaRate(){
         return data.getJSONObject("rates").getBigDecimal("NGN");
     }
 
-    public static BigDecimal dollarRate(){
+    public BigDecimal dollarRate(){
         return  data.getJSONObject("rates").getBigDecimal("USD");
     }
 
-    public static BigDecimal eurosRate(){
+    public BigDecimal eurosRate(){
         return  data.getJSONObject("rates").getBigDecimal("EUR");
     }
 
-    public static BigDecimal poundsRate(){
+    public BigDecimal poundsRate(){
         return  data.getJSONObject("rates").getBigDecimal("GBP");
     }
-    public static BigDecimal canadianDollarRate(){
+    public BigDecimal canadianDollarRate(){
         return  data.getJSONObject("rates").getBigDecimal("CAD");
     }
 
