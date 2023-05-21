@@ -1,10 +1,11 @@
 package com.example.crossfundwallet.dto.request;
 
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Data
-@Component
+@Builder
 public class RegisterUserRequest {
     private String firstName;
     private String lastName;

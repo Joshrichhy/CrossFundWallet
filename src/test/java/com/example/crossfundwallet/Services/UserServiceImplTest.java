@@ -5,6 +5,7 @@ import com.example.crossfundwallet.Exception.EmailExistException;
 import com.example.crossfundwallet.Exception.PhoneNumberExistException;
 import com.example.crossfundwallet.dto.request.RegisterUserRequest;
 import com.example.crossfundwallet.dto.response.RegisterUserResponse;
+import lombok.Builder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,36 +17,32 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class UserServiceImplTest {
     @Autowired
-    UserService userService;
-    @Autowired
-    RegisterUserRequest registerRequest;
+     private UserService userService;
+
+     private RegisterUserRequest registerRequest;
 
     @BeforeEach
     public void setUserService(){
-        RegisterUserRequest registerRequest = new RegisterUserRequest();
-        registerRequest.setFirstName("Ola");
-        registerRequest.setLastName("Yinka");
-        registerRequest.setEmailAddress("olayi@email.com");
-        registerRequest.setPassword("passsword1");
-        registerRequest.setPhoneNumber("0901234568");
-        registerRequest.setAccountNumber("0901234568");
-        registerRequest.setDOB(String.valueOf(LocalDate.parse("1998-01-01")));
+
     }
+//    @Test
+//    void contextLoads() {
+//    }
 
 
     @Test
-    void register() throws EmailExistException, PhoneNumberExistException {
-        User user = new User();
-        user.setFirstName(registerRequest.getFirstName());
-        user.setLastName(registerRequest.getLastName());
-        user.setEmailAddress(registerRequest.getEmailAddress());
-        user.setPassword(registerRequest.getPassword());
-        user.setPhoneNumber(registerRequest.getPhoneNumber());
-        user.setAccountNumber(registerRequest.getPhoneNumber());
-        RegisterUserResponse regUser =userService.register(registerRequest);
-        System.out.println(regUser);
-        assertNotNull(regUser);
-//        assertEquals(user, registerRequest);
+     void register() throws EmailExistException, PhoneNumberExistException {
+        registerRequest = RegisterUserRequest.builder().DOB("01/12/1923")
+                .firstName("Ola")
+                .lastName("Yinka")
+                .emailAddress("myemail@gmail.com")
+                .phoneNumber("0901234568")
+                .build();
+        RegisterUserResponse user = userService.register(registerRequest);
+        System.out.println(user.getAccountNumber());
+        assertEquals("Yinka", user.getLastName());
+
+
     }
 
 }

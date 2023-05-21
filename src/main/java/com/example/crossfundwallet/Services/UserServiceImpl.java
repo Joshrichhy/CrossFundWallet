@@ -5,6 +5,7 @@ import com.example.crossfundwallet.Data.Repositories.UserRepository;
 import com.example.crossfundwallet.Exception.EmailExistException;
 import com.example.crossfundwallet.Exception.InvalidLoginException;
 import com.example.crossfundwallet.Exception.PhoneNumberExistException;
+import com.example.crossfundwallet.Mapper;
 import com.example.crossfundwallet.dto.request.LoginRequest;
 import com.example.crossfundwallet.dto.request.RegisterUserRequest;
 import com.example.crossfundwallet.dto.response.RegisterUserResponse;
@@ -23,18 +24,11 @@ public class UserServiceImpl implements UserService {
     RegisterUserResponse registerUserResponse;
     @Override
     public RegisterUserResponse register(RegisterUserRequest registerRequest) throws EmailExistException, PhoneNumberExistException {
-//        registerRequest.setEmailAddress(registerRequest.getEmailAddress().toLowerCase());
         if (userEmailExist(registerRequest.getEmailAddress()))
             throw new EmailExistException(registerRequest.getEmailAddress() + "already exist");
         if (!validatePhoneNumber(registerRequest.getPhoneNumber()))
             throw new PhoneNumberExistException("Invalid phone number" + registerRequest.getPhoneNumber());
-        User user = new User();
-        user.setFirstName(registerRequest.getFirstName());
-        user.setLastName(registerRequest.getLastName());
-        user.setEmailAddress(registerRequest.getEmailAddress());
-        user.setPassword(registerRequest.getPassword());
-        user.setDOB(LocalDate.parse(registerRequest.getDOB()));
-        user.setDateOfRegistration(LocalDate.now());
+        User user = Mapper.mapUserRequest(registerRequest);
         User savedUser = userRepository.save(user);
         registerUserResponse.setFirstName(savedUser.getFirstName());
         registerUserResponse.setLastName(savedUser.getLastName());
@@ -42,7 +36,6 @@ public class UserServiceImpl implements UserService {
         registerUserResponse.setDOB(String.valueOf(savedUser.getDOB()));
         registerUserResponse.setDateOfRegistration(LocalDate.now());
         return registerUserResponse;
-
     }
     private boolean userEmailExist(String emailAddress) {
     User foundUser =userRepository.findByEmailAddress(emailAddress);

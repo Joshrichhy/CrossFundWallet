@@ -15,7 +15,7 @@ public class User {
     private String lastName;
     private String emailAddress;
     private String phoneNumber;
-    private LocalDate DOB;
+    private String DOB;
     private LocalDate DateOfRegistration;
     private String accountNumber;
     private int age;
