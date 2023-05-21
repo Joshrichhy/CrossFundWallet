@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 @Data
 @Builder
 public class WithdrawalRequest {
+    private String transactionType;
     private CurrencyType currencyType;
     private BigDecimal amount;
     private String accountNumber;

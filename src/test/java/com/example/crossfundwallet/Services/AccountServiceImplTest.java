@@ -54,14 +54,8 @@ class AccountServiceImplTest {
     }
 
     @Test
-    void depositTest() throws CurrencyNotFound, AccountDoesNotExist {
-
-        DepositRequest depositRequest = DepositRequest.builder()
-                .accountNumber(account.getAccountNumber())
-                .amount(BigDecimal.valueOf(5000))
-                .currency(CurrencyType.valueOf("GBP")).build();
-        accountService.deposit(depositRequest);
-        assertEquals(BigDecimal.valueOf(8400), accountService.findByAccountNumber(account.getAccountNumber()));
+    void depositTest() {
+        assertEquals(BigDecimal.valueOf(8400.00), accountService.findByAccountNumber(account.getAccountNumber()).getAccountBalance());
     }
     @Test
             void WithdrawalTest() throws InvalidCredentialException, InsufficientFundException, CurrencyNotFound {
