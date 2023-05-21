@@ -59,7 +59,6 @@ public class UserServiceImpl implements UserService {
         }
         else return "login successful";
     }
-
     @Override
     public String closeAccount(String accountNumber) {
         User user = userRepository.findByAccountNumber(accountNumber);
