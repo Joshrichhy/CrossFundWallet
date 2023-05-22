@@ -1,8 +1,7 @@
 package com.example.crossfundwallet;
 
 import com.example.crossfundwallet.Data.Models.User;
-import com.example.crossfundwallet.dto.request.RegisterUserRequest;
-import com.example.crossfundwallet.dto.response.RegisterUserResponse;
+import com.example.crossfundwallet.dtos.request.RegisterUserRequest;
 
 import java.time.LocalDate;
 

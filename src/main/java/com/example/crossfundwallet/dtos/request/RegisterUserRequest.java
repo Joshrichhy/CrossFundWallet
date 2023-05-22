@@ -1,8 +1,7 @@
-package com.example.crossfundwallet.dto.request;
+package com.example.crossfundwallet.dtos.request;
 
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 @Data
 @Builder

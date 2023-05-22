@@ -1,7 +1,6 @@
-package com.example.crossfundwallet.dtos;
+package com.example.crossfundwallet.dtos.request;
 
 import com.example.crossfundwallet.Data.Models.CurrencyType;
-import com.example.crossfundwallet.Data.Models.TransactionType;
 import lombok.Builder;
 import lombok.Data;
 

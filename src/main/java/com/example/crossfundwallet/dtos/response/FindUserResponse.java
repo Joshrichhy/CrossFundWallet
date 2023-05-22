@@ -1,4 +1,4 @@
-package com.example.crossfundwallet.dto.response;
+package com.example.crossfundwallet.dtos.response;
 
 import lombok.Data;
 
