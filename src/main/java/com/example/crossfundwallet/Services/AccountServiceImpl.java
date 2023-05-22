@@ -1,5 +1,6 @@
 package com.example.crossfundwallet.Services;
 
+
 import com.example.crossfundwallet.Data.Models.Account;
 import com.example.crossfundwallet.Data.Models.CurrencyType;
 import com.example.crossfundwallet.Data.Repositories.AccountRepository;
@@ -163,6 +164,5 @@ public class AccountServiceImpl implements AccountService{
 
         return accountNumber;
     }
-
 
 }

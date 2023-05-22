@@ -10,7 +10,6 @@ import com.example.crossfundwallet.dtos.RegisterUserRequest;
 import com.example.crossfundwallet.dtos.TransactionReceipt;
 import com.example.crossfundwallet.dtos.WithdrawalRequest;
 
-import java.math.BigDecimal;
 
 public interface AccountService {
     Account createAccount(RegisterUserRequest userRequest);
@@ -21,4 +20,5 @@ public interface AccountService {
     Account findByAccountNumber(String accountNumber);
 
     TransactionReceipt withdraw(WithdrawalRequest withdrawalRequest) throws InvalidCredentialException, InsufficientFundException, CurrencyNotFound;
+
 }

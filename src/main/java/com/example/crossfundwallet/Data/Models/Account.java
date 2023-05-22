@@ -20,4 +20,5 @@ public class Account {
     private CurrencyType accountCurrencyType;
     private String accountStatus;
     private String transactionHistory;
+
 }
