@@ -1,17 +1,13 @@
 package com.example.crossfundwallet.Services;
 
-import com.example.crossfundwallet.Data.Models.User;
-import com.example.crossfundwallet.Exception.EmailExistException;
-import com.example.crossfundwallet.Exception.PhoneNumberExistException;
-import com.example.crossfundwallet.dto.request.RegisterUserRequest;
-import com.example.crossfundwallet.dto.response.RegisterUserResponse;
-import lombok.Builder;
+import com.example.crossfundwallet.Exceptions.EmailExistException;
+import com.example.crossfundwallet.Exceptions.PhoneNumberExistException;
+import com.example.crossfundwallet.dtos.request.RegisterUserRequest;
+import com.example.crossfundwallet.dtos.response.RegisterUserResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest

@@ -1,7 +1,5 @@
-package com.example.crossfundwallet.dtos;
+package com.example.crossfundwallet.dtos.response;
 
-import com.example.crossfundwallet.Data.Models.TransactionType;
-import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;

@@ -2,13 +2,13 @@ package com.example.crossfundwallet.Services;
 
 import com.example.crossfundwallet.Data.Models.User;
 import com.example.crossfundwallet.Data.Repositories.UserRepository;
-import com.example.crossfundwallet.Exception.EmailExistException;
-import com.example.crossfundwallet.Exception.InvalidLoginException;
-import com.example.crossfundwallet.Exception.PhoneNumberExistException;
+import com.example.crossfundwallet.Exceptions.EmailExistException;
+import com.example.crossfundwallet.Exceptions.InvalidLoginException;
+import com.example.crossfundwallet.Exceptions.PhoneNumberExistException;
 import com.example.crossfundwallet.Mapper;
-import com.example.crossfundwallet.dto.request.LoginRequest;
-import com.example.crossfundwallet.dto.request.RegisterUserRequest;
-import com.example.crossfundwallet.dto.response.RegisterUserResponse;
+import com.example.crossfundwallet.dtos.request.LoginRequest;
+import com.example.crossfundwallet.dtos.request.RegisterUserRequest;
+import com.example.crossfundwallet.dtos.response.RegisterUserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +19,9 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    UserRepository userRepository;
+   private  UserRepository userRepository;
     @Autowired
-    RegisterUserResponse registerUserResponse;
+    private RegisterUserResponse registerUserResponse;
     @Override
     public RegisterUserResponse register(RegisterUserRequest registerRequest) throws EmailExistException, PhoneNumberExistException {
         if (userEmailExist(registerRequest.getEmailAddress()))

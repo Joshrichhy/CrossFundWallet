@@ -1,12 +1,9 @@
-package com.example.crossfundwallet.dto.response;
+package com.example.crossfundwallet.dtos.response;
 
-import com.example.crossfundwallet.Data.Models.Card;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @Data
