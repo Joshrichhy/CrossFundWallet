@@ -14,9 +14,10 @@ public class Account {
     private String accountId;
     private String accountFirstName;
     private String accountLastName;
-    private BigDecimal accountBalance;
+    private BigDecimal accountBalance = BigDecimal.ZERO;
     private String accountNumber;
-    private String accountCurrencyType;
+    private String accountPin;
+    private CurrencyType accountCurrencyType;
     private String accountStatus;
     private String transactionHistory;
 
