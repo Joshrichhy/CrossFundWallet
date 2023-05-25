@@ -7,7 +7,7 @@ import com.example.crossfundwallet.Exceptions.CurrencyNotFound;
 import com.example.crossfundwallet.Exceptions.InsufficientFundException;
 import com.example.crossfundwallet.Exceptions.InvalidCredentialException;
 import com.example.crossfundwallet.dtos.request.DepositRequest;
-import com.example.crossfundwallet.dtos.RegisterUserRequest;
+import com.example.crossfundwallet.dtos.request.RegisterUserRequest;
 import com.example.crossfundwallet.dtos.request.WithdrawalRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ class AccountServiceImplTest {
     void setUp() throws CurrencyNotFound, AccountDoesNotExist {
         accountService.deleteAllAccounts();
         registerUserRequest = RegisterUserRequest.builder().DOB("12/17/1994")
-                .EmailAddress("kusejoshua@gmail.com")
+                .emailAddress("kusejoshua@gmail.com")
                 .firstName("Joshua")
                 .lastName("Oluwakuse")
                 .password("123456")

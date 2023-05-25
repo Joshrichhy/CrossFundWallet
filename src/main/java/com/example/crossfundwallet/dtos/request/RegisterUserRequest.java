@@ -1,5 +1,6 @@
 package com.example.crossfundwallet.dtos.request;
 
+import com.example.crossfundwallet.Data.Models.CurrencyType;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,6 +14,8 @@ public class RegisterUserRequest {
     private String password;
     private String phoneNumber;
     private String accountNumber;
+    private String accountCurrencyType;
+    private String accountPin;
 
 
 }
