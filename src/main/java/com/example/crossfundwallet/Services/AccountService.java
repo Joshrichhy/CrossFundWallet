@@ -6,7 +6,6 @@ import com.example.crossfundwallet.Exceptions.CurrencyNotFound;
 import com.example.crossfundwallet.Exceptions.InsufficientFundException;
 import com.example.crossfundwallet.Exceptions.InvalidCredentialException;
 import com.example.crossfundwallet.dtos.request.DepositRequest;
-import com.example.crossfundwallet.dtos.RegisterUserRequest;
 import com.example.crossfundwallet.dtos.request.RegisterUserRequest;
 import com.example.crossfundwallet.dtos.response.TransactionReceipt;
 import com.example.crossfundwallet.dtos.request.WithdrawalRequest;
