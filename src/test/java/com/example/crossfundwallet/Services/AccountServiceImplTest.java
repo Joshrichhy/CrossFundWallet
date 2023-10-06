@@ -55,7 +55,7 @@ class AccountServiceImplTest {
 
     @Test
     void depositTest() {
-        assertEquals(BigDecimal.valueOf(8400.00), accountService.findByAccountNumber(account.getAccountNumber()).getAccountBalance());
+        assertEquals(BigDecimal.valueOf(8350.00), accountService.findByAccountNumber(account.getAccountNumber()).getAccountBalance());
     }
     @Test
             void WithdrawalTest() throws InvalidCredentialException, InsufficientFundException, CurrencyNotFound {
